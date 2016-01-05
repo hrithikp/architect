@@ -416,6 +416,9 @@ function Architect(config) {
         hub: {
             on: function (name, callback) {
                 app.on(name, callback);
+            },
+            emit: function() {
+                app.emit.apply(app, arguments);
             }
         }
     };
